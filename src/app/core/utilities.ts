@@ -1,0 +1,1 @@
+export const r = (el: string[]) => el.join(" ")

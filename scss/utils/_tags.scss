@@ -1,0 +1,52 @@
+input, button {
+  @include appearance(none);
+  height: $inputHeight;
+  border-radius: $defaultBorderRadius;
+  border-style: none;
+  font-size: $baseFontSize;
+}
+
+h1 {
+  font-size: $largeFont;
+  font-weight: 600;
+  margin: 0px;
+}
+
+h2 {
+  font-size: calc(#{$largeFont} - .8rem);
+  font-weight: 600;
+  margin: 0px;
+}
+
+h3, span.h3 {
+  font-size: calc(#{$largeFont} - 1.6rem);
+  font-weight: 600;
+  margin: 0px;
+}
+h5 {
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    // transform: translateY(-2px);
+  }
+}
+a, input[type="button"], input[type="submit"]  {
+  &.btn {
+    @include appearance(none);
+    padding: 1px;
+    &:hover {
+      filter: brightness(120%);
+    }
+
+    &.block {
+      display: block;
+    }
+    &.iblock {
+      display: inline-block;
+    }
+  }
+}

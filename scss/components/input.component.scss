@@ -1,0 +1,62 @@
+@import '../utils/variables';
+
+$inputShrinkSize: calc(#{$baseFontSize} - 0.3rem);
+
+@mixin font-size-color {
+  font-size: $inputShrinkSize;
+  color: dimgrey;
+}
+
+.input-wrapper {
+  position: absolute;
+  display: inline-block;
+  z-index: 0;
+
+  & ~ .with-span {
+    font-size: $baseFontSize;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding-left: $baseLabelInputPadding;
+  }
+
+  &:hover {
+    background-color: whitesmoke;
+  }
+
+  input {
+    padding: $baseLabelInputPadding;
+    padding-top: $baseFontSize;
+    background-color: transparent !important;
+    :required {
+      background-color: transparent !important;
+      box-shadow: 0px 0px 5px red;
+    }
+
+    &:focus {
+      & ~ label {
+        @include font-size-color;
+        z-index: -1;
+      }
+    }
+    &:not(:focus) {
+      & ~ label {
+        padding: 1rem;
+      }
+    }
+  }
+  label {
+    font-size: $baseFontSize;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-left: $baseLabelInputPadding;
+    width: inherit;
+    height: inherit;
+    &.minify {
+      padding: 0px !important;
+      @include font-size-color;
+      padding-left: $baseLabelInputPadding !important;
+    }
+  }
+}

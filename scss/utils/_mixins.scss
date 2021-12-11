@@ -7,3 +7,8 @@
   box-shadow: none;
   outline: none;
 }
+
+@mixin font-size-color {
+  font-size: $inputShrinkSize;
+  color: dimgrey;
+}

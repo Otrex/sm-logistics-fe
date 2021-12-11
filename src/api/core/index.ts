@@ -1,6 +1,6 @@
 import config from "@app/config";
 import axios from "axios";
-import { RequestMethod, RequestOptions } from "../types";
+import { RequestMethod, RequestOptions } from "types/api.types";
 
 // axios.defaults.baseURL = process.env.REACT_APP_BE_URL;
 const instance = axios.create();

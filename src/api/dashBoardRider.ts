@@ -1,6 +1,5 @@
-import { RequestMethod } from "@app/types";
 import { DashBoardAPI } from "./dashboard";
-import Api from "../core/Api";
+import Api from "./core";
 
 export class RiderDashboardAPI extends DashBoardAPI {
   

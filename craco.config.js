@@ -13,6 +13,9 @@ module.exports = {
           are specified */
           tsConfigPath: "./tsconfig.paths.json"
        }
+    },
+    {
+      plugin: require('craco-plugin-scoped-css')
     }
   ],
   style: {

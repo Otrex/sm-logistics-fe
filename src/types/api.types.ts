@@ -1,3 +1,5 @@
+export type ObjectANY = { [key: string]: any };
+
 export interface RequestOptions {
   method: RequestMethod;
   url: string;
@@ -26,18 +28,3 @@ export type RegistrationParams  = {
   lastName: string;
   phoneNumber: string;
 }
-
-export enum StatusState {
-  IDLE = 'IDLE',
-  LOADING = 'LOADING',
-  FAILED = 'FAILED'
-}
-
-export interface AuthState {
-  isAuthenticated: boolean;
-  user: {[key: string]: any } | null;
-  status: StatusState;
-  isRegistered: boolean;
-}
-
-export type ObjectANY = { [key: string]: any };

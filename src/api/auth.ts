@@ -1,7 +1,5 @@
-import { store } from "@app/store";
-import { RequestMethod } from "@app/types";
-import Api from "../core/Api";
-import { LoginParams, RegistrationParams } from "./types";
+import { LoginParams, RegistrationParams, RequestMethod } from "types/api.types";
+import Api from "./core";
 
 export class AuthApi extends Api {
   loginClient = async (data: LoginParams) => {

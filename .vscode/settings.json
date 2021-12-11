@@ -3,7 +3,7 @@
       {
           "extensionName": ".css",
           "format": "compressed",
-          "savePath": "./src/styles"
+          "savePath": "."
       }
   ],
   "liveSassCompile.settings.excludeList": [

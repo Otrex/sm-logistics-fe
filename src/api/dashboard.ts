@@ -1,5 +1,3 @@
-import Api from "./core";
+import Api from "@app/api";
 
-export class DashBoardAPI extends Api {
-  
-}
+export class DashBoardAPI extends Api {}

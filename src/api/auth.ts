@@ -1,5 +1,9 @@
-import { LoginParams, RegistrationParams, RequestMethod } from "types/api.types";
-import Api from "./core";
+import {
+  LoginParams,
+  RegistrationParams,
+  RequestMethod,
+} from "types/api";
+import Api from "@app/api";
 
 export class AuthApi extends Api {
   loginClient = async (data: LoginParams) => {
@@ -32,21 +36,21 @@ export class AuthApi extends Api {
       data,
     });
   };
-  
+
   logoutRider = async () => {
     return this.__request({
       method: RequestMethod.GET,
       url: "/account/api/logout",
     });
   };
-  
+
   registerRider = async (data: RegistrationParams) => {
     return this.__request({
       method: RequestMethod.POST,
       url: "/account/api/register",
       data,
     });
-  }
+  };
 }
 
-export default new AuthApi()
+export default new AuthApi();

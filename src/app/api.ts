@@ -1,6 +1,6 @@
 import config from "@app/config";
 import axios from "axios";
-import { RequestMethod, RequestOptions } from "types/api.types";
+import { RequestMethod, RequestOptions } from "types/app";
 
 // axios.defaults.baseURL = process.env.REACT_APP_BE_URL;
 const instance = axios.create();
@@ -10,10 +10,12 @@ export default class API {
 
   xtoken!: string;
 
-  expireCallback!: any
+  expireCallback!: any;
 
   __parseCookie(): Record<string, any> {
-    return Object.fromEntries(window.document.cookie.split(";").map((el) => el.split("=")))
+    return Object.fromEntries(
+      window.document.cookie.split(";").map((el) => el.split("="))
+    );
   }
 
   __jsonRequest(requestOptions: RequestOptions) {
@@ -78,7 +80,7 @@ export default class API {
           }
 
           if (typeof this.expireCallback === "function") {
-            this.expireCallback()
+            this.expireCallback();
           }
         }
         return Promise.reject(e.response.data);
@@ -88,12 +90,11 @@ export default class API {
   }
 
   get token(): string | undefined {
-    return this.__parseCookie().token
+    return this.__parseCookie().token;
   }
 
   setToken(token: string) {
     this.xtoken = token;
-    window.document.cookie =
-      `token=${token}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    window.document.cookie = `token=${token}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   }
 }

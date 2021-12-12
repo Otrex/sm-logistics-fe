@@ -1,7 +1,7 @@
 export enum StatusState {
-  IDLE = "IDLE",
-  LOADING = "LOADING",
-  FAILED = "FAILED",
+  IDLE = 'IDLE',
+  LOADING = 'LOADING',
+  FAILED = 'FAILED',
 }
 
 export interface AuthState {

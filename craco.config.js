@@ -1,26 +1,26 @@
-const CracoAlias = require("craco-alias");
+const CracoAlias = require('craco-alias');
 
 module.exports = {
   plugins: [
     {
       plugin: CracoAlias,
       options: {
-        source: "tsconfig",
+        source: 'tsconfig',
         // baseUrl SHOULD be specified
         // plugin does not take it from tsconfig
-        baseUrl: "./src",
+        baseUrl: './src',
         /* tsConfigPath should point to the file where "baseUrl" and "paths" 
           are specified */
-        tsConfigPath: "./tsconfig.paths.json",
+        tsConfigPath: './tsconfig.paths.json',
       },
     },
     {
-      plugin: require("craco-plugin-scoped-css"),
+      plugin: require('craco-plugin-scoped-css'),
     },
   ],
   style: {
     postcss: {
-      plugins: [require("tailwindcss"), require("autoprefixer")],
+      plugins: [require('tailwindcss'), require('autoprefixer')],
     },
   },
 };

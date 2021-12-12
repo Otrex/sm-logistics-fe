@@ -1,8 +1,8 @@
-import React from "react";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { useRouteMatch } from "react-router-dom";
-import { RootState, AppDispatch } from "./store";
-import { updateStateObject } from "./utils";
+import React from 'react';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
+import { RootState, AppDispatch } from './store';
+import { updateStateObject } from './utils';
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>();

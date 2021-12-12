@@ -1,15 +1,12 @@
-import {
-  LoginParams,
-  RegistrationParams,
-  RequestMethod,
-} from "types/api";
-import Api from "@app/api";
+import { LoginParams, RegistrationParams } from 'types/api';
+import { RequestMethod } from 'types/app';
+import Api from '@app/api';
 
 export class AuthApi extends Api {
   loginClient = async (data: LoginParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/login",
+      url: '/account/api/login',
       data,
     });
   };
@@ -17,14 +14,14 @@ export class AuthApi extends Api {
   logoutClient = async () => {
     return this.__request({
       method: RequestMethod.GET,
-      url: "/account/api/logout",
+      url: '/account/api/logout',
     });
   };
 
   registerClient = async (data: RegistrationParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/register",
+      url: '/account/api/register',
       data,
     });
   };
@@ -32,7 +29,7 @@ export class AuthApi extends Api {
   loginRider = async (data: LoginParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/login",
+      url: '/account/api/login',
       data,
     });
   };
@@ -40,14 +37,14 @@ export class AuthApi extends Api {
   logoutRider = async () => {
     return this.__request({
       method: RequestMethod.GET,
-      url: "/account/api/logout",
+      url: '/account/api/logout',
     });
   };
 
   registerRider = async (data: RegistrationParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/register",
+      url: '/account/api/register',
       data,
     });
   };

@@ -1,4 +1,6 @@
-export const r = (el: string[]) => el.join(" ");
+import { Component } from 'react';
+
+export const r = (el: string[]) => el.join(' ');
 
 export const updateStateObject = (
   state: Record<string, any>,
@@ -13,7 +15,7 @@ export const updateStateObject = (
 
 export const urlPath =
   (base: string) =>
-  (path: string = "") =>
+  (path: string = '') =>
     `${base}${path}`;
 
 export const checkEmptyFields = (data: Record<string, any>) => {
@@ -24,6 +26,6 @@ export const checkEmptyFields = (data: Record<string, any>) => {
   });
 
   if (errors.length > 0) {
-    throw new Error(`the following fields ${errors.join(", ")} are empty`);
+    throw new Error(`the following fields ${errors.join(', ')} are empty`);
   }
 };

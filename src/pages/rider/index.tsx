@@ -7,16 +7,12 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Rider from '@pages/rider';
-import Client from '@pages/client';
 
-function App() {
+function Rider() {
   return (
     <>
       <Router>
         <Switch>
-          {/* <Route exact path="/" component={Rider}/> */}
-          <Route exact path="/client*" component={Client} />
           <Route exact path="/test" component={Test} />
         </Switch>
       </Router>
@@ -24,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default Rider;

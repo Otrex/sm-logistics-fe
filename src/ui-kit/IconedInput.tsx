@@ -1,7 +1,7 @@
 import { InputProps } from 'types/ui-kit';
 import React from 'react';
 import styled from 'styled-components';
-import TextInput from './TextInput';
+import Input from './Input';
 
 const Wrapper = styled.div<{ left?: boolean }>`
   position: relative;
@@ -25,7 +25,7 @@ export default function IconedInput({
   return (
     <>
       <Wrapper>
-        <TextInput {...props}></TextInput>
+        <Input {...props}></Input>
         <span>{icon}</span>
       </Wrapper>
     </>

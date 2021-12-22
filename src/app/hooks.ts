@@ -39,8 +39,21 @@ export const useRouteChange = (route: string) => {
 
 export function useFormState<T>(
   defaultState: T
-): [T, ReturnType<typeof updateStateObject>] {
+): [T, ReturnType<typeof updateStateObject>, () => void] {
   const [form, setForm] = React.useState(defaultState);
   const setFormField = updateStateObject(form, setForm);
-  return [form, setFormField];
+  const reset = () => void setForm(defaultState);
+  return [form, setFormField, reset];
+}
+
+export function useGetValue<T>(
+  defaultState: T,
+  callback: (e: any, ...args: any) => boolean = (e: any) => true
+): [T, (e: any) => void, React.Dispatch<React.SetStateAction<T>>] {
+  const [state, setstate] = React.useState(defaultState);
+  const setter = (action: typeof setstate) => (e: any) => {
+    action(e.target.value);
+    callback(e);
+  };
+  return [state, setter(setstate), setstate];
 }

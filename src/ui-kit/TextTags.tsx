@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IAProps } from 'types/ui-kit';
 
 export const H1 = styled.h1.attrs((props: any & { white?: boolean }) => ({
   ...props,
@@ -59,4 +60,10 @@ export const P = styled.p`
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
+`;
+
+export const A = styled.a<IAProps>`
+  ${(props) => (props.underline ? 'text-decoration: underline;' : '')}
+  ${(props) =>
+    props.accent ? `color: ${props.theme.text_color.accent.orange};` : ''}
 `;

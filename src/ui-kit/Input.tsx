@@ -84,7 +84,7 @@ const Wrapper = styled.div.attrs((props: IWrapper) => {
   }
 `;
 
-const TextInput = ({
+const Input = ({
   label,
   labelClass,
   paddingSide,
@@ -121,10 +121,10 @@ const TextInput = ({
   );
 };
 
-TextInput.defaultProps = {
+Input.defaultProps = {
   labelClass: undefined,
   label: undefined,
   wrapperClass: [],
 };
 
-export default TextInput;
+export default Input;

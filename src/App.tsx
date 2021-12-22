@@ -20,6 +20,7 @@ function App() {
           <Route exact path="/test" component={Test} />
         </Switch>
       </Router>
+      <Test title={'Treasure'} />
     </>
   );
 }

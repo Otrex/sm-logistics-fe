@@ -88,3 +88,8 @@ export const Button = styled.button<IButtonProps>`
     opacity: 0.4;
   }
 `;
+
+export const AccentButton = styled(Button)`
+  background-color: ${(props) => props.theme.bg_colors.accent.orange};
+  color: ${(props) => props.theme.text_color.accent.dark_blue};
+`;

@@ -9,8 +9,7 @@ export default function AuthSidePanel() {
     <>
       <Wrapper>
         <div>
-          {' '}
-          <img src={logo} alt="logo" />{' '}
+          <img src={logo} alt="logo" />
         </div>
         <div className="mt-28 mb-8">
           <H1 white>Experience Super-Fast Delivery with Optimal Quality</H1>

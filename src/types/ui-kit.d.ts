@@ -1,4 +1,8 @@
-import { InputHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import {
+  InputHTMLAttributes,
+  ButtonHTMLAttributes,
+  AHTMLAttributes,
+} from 'react';
 
 export type IconType = {
   hover?: boolean;
@@ -34,4 +38,9 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string;
   height?: string;
   borderRadius?: string;
+}
+
+export interface IAProps extends AHTMLAttributes<HTMLAElement> {
+  underline: boolean;
+  accent: boolean;
 }

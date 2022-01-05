@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { CardProps, IButtonProps, IconType } from 'types/ui-kit';
+import styled from "styled-components";
+import { CardProps, IButtonProps, IconType } from "types/ui-kit";
 
 const imgFull = `
 img.full {
@@ -13,9 +13,9 @@ export const IconRounded = styled.i.attrs((props: IconType) => ({
   ...props,
 }))`
   width: ${(props) =>
-    props.large ? '7rem' : props.size ? props.size : '5.2rem'};
+    props.large ? "7rem" : props.size ? props.size : "5.2rem"};
   height: ${(props) =>
-    props.large ? '7rem' : props.size ? props.size : '5.2rem'};
+    props.large ? "7rem" : props.size ? props.size : "5.2rem"};
   border-radius: 50%;
   display: flex;	
   justify-content: center;
@@ -31,7 +31,7 @@ export const IconRounded = styled.i.attrs((props: IconType) => ({
     background-color: ${(props) =>
       props.hover ? props.theme.bg_colors.icon.hover : undefined};
   }
-  ${(props) => (props.imgFull ? imgFull : '')}
+  ${(props) => (props.imgFull ? imgFull : "")}
 }
 `;
 
@@ -41,14 +41,17 @@ export const Card = styled.div<CardProps>`
   padding: 1rem;
   border-radius: 1rem;
   border-color: ${(props) =>
-    props.borderColor ? props.borderColor : 'transparent'};
+    props.borderColor ? props.borderColor : "transparent"};
   border-width: ${(props) => props.theme.sizes.ui_card.border_width};
   background-color: ${(props) =>
-    props.bgColor ? props.bgColor : 'transparent'};
+    props.bgColor ? props.bgColor : "transparent"};
   color: ${(props) =>
-    props.textColor ? props.textColor : props.theme.text_color.default};
+    props.textColor
+      ? props.textColor
+      : props.theme.text_color.default};
   svg {
-    color: ${(props) => (props.iconColor ? props.iconColor : 'transparent')};
+    color: ${(props) =>
+      props.iconColor ? props.iconColor : "transparent"};
   }
 `;
 
@@ -78,14 +81,16 @@ export const Button = styled.button<IButtonProps>`
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
-  width: ${(props) => props.width || '100%'};
-  height: ${(props) => props.height || '5.6rem'};
-  color: ${(props) => props.textColor || props.theme.text_color.default};
-  background-color: ${(props) => props.bgColor || 'transparent'};
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height || "5.6rem"};
+  color: ${(props) =>
+    props.textColor || props.theme.text_color.default};
+  background-color: ${(props) => props.bgColor || "transparent"};
   border-radius: 12px;
 
   &:disabled {
     opacity: 0.4;
+    cursor: not-allowed;
   }
 `;
 

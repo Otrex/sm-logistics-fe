@@ -1,6 +1,6 @@
-import React from 'react';
-import { InputProps } from 'types/ui-kit';
-import styled, { ThemedStyledProps } from 'styled-components';
+import React from "react";
+import { InputProps } from "types/ui-kit";
+import styled, { ThemedStyledProps } from "styled-components";
 
 type IWrapper = ThemedStyledProps<
   Pick<
@@ -8,7 +8,7 @@ type IWrapper = ThemedStyledProps<
       React.HTMLAttributes<HTMLDivElement>,
       HTMLDivElement
     >,
-    'key' | keyof React.HTMLAttributes<HTMLDivElement>
+    "key" | keyof React.HTMLAttributes<HTMLDivElement>
   > & { paddingLeft?: string; paddingSide?: string },
   any
 >;
@@ -55,7 +55,7 @@ const Wrapper = styled.div.attrs((props: IWrapper) => {
     border: 0.5px solid #e5e5e5;
     border-radius: 4px;
     ${(props) =>
-      props.paddingSide ? `padding-right: ${props.paddingSide};` : ''}
+      props.paddingSide ? `padding-right: ${props.paddingSide};` : ""}
   }
 
   & input:required {
@@ -96,19 +96,29 @@ const Input = ({
 
   const onClick = () => {
     const parent = labelEl.current!.parentElement! as HTMLDivElement;
-    parent.querySelector('input')?.focus();
+    parent.querySelector("input")?.focus();
   };
 
   const monitorInput = (e: any) => {
-    if (e.target.value) labelEl.current!.classList.add('minify');
-    else labelEl.current!.classList.remove('minify');
+    if (e.target.value) labelEl.current!.classList.add("minify");
+    else labelEl.current!.classList.remove("minify");
     if (props.onChange) props.onChange(e);
   };
+
+  React.useEffect(() => {
+    if (props.value) labelEl.current!.classList.add("minify");
+    else labelEl.current!.classList.remove("minify");
+  }, [props.value]);
 
   return (
     <>
       <Wrapper className={wrapperClass} paddingSide={paddingSide}>
-        <input {...props} ref={getRef} onChange={monitorInput} placeholder="" />
+        <input
+          {...props}
+          ref={getRef}
+          onChange={monitorInput}
+          placeholder=""
+        />
         <label
           ref={labelEl as React.MutableRefObject<HTMLLabelElement>}
           className={labelClass}

@@ -1,12 +1,12 @@
-import React from 'react';
-import Test from '@pages/Test';
+import React from "react";
+import Test from "@pages/Test";
 
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
-} from 'react-router-dom';
+} from "react-router-dom";
 
 function Rider() {
   return (

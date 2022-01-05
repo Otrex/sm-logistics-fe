@@ -1,11 +1,11 @@
-import React from 'react';
-import { H1, P } from '@ui-kit/TextTags';
-import TextInput from '@ui-kit/Input';
-import PasswordInput from '@ui-kit/PasswordInput';
-import { Button } from '@ui-kit/ComponentTags';
-import theme from '@app/theme';
+import React from "react";
+import { A, H1, P } from "@ui-kit/TextTags";
+import TextInput from "@ui-kit/Input";
+import PasswordInput from "@ui-kit/PasswordInput";
+import { AccentButton, Button } from "@ui-kit/ComponentTags";
 
 function LoginPanel(props: any) {
+  const { stateMngr: state } = props;
   return (
     <>
       <div className="flex items-center justify-center w-full p-11">
@@ -16,33 +16,28 @@ function LoginPanel(props: any) {
           </P>
           <div className="mt-12 mb-20">
             <TextInput
+              type="email"
               label="Enter Email Address"
               wrapperClass="w-full mb-12"
+              onChange={state.setEmail}
             />
-            <PasswordInput label="Enter Password" />
-            <P
-              className="text-right mt-5"
-              style={{ color: theme.text_color.accent.orange }}
-            >
-              Forgot Password?
-            </P>
+            <PasswordInput
+              label="Enter Password"
+              onChange={state.setPassword}
+            />
+
+            <div className="text-right mt-5" ref={state.ref}>
+              <A accent href="https://google.com">
+                Forgot Password?
+              </A>
+            </div>
           </div>
-          <Button
-            bgColor={theme.bg_colors.accent.orange}
-            textColor={theme.text_color.accent.dark_blue}
-          >
-            Login
-          </Button>
+          <AccentButton onClick={state.login}>Login</AccentButton>
           <P className="text-center mt-9">
-            Dont have an account?{' '}
-            <span
-              style={{
-                color: theme.text_color.accent.orange,
-                textDecoration: 'underline',
-              }}
-            >
+            Dont have an account?&nbsp;
+            <A href="/client/register" accent underline>
               Sign Up
-            </span>
+            </A>
           </P>
         </form>
       </div>

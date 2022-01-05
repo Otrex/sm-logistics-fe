@@ -1,13 +1,14 @@
-import DownCaret from '@assets/svg/DownCaret';
-import React from 'react';
-import styled, { ThemedStyledProps } from 'styled-components';
+import DownCaret from "@assets/svg/DownCaret";
+import React from "react";
+import ReactDOM from "react-dom";
+import styled, { ThemedStyledProps } from "styled-components";
 type IWrapper = ThemedStyledProps<
   Pick<
     React.DetailedHTMLProps<
       React.HTMLAttributes<HTMLDivElement>,
       HTMLDivElement
     >,
-    'key' | keyof React.HTMLAttributes<HTMLDivElement>
+    "key" | keyof React.HTMLAttributes<HTMLDivElement>
   > & { paddingLeft?: string; paddingSide?: string },
   any
 >;
@@ -63,6 +64,7 @@ const Selection = styled.div.attrs((props: IWrapper) => {
   height: ${(props) => props.theme.sizes.input.height};
   background-color: transparent !important;
   border: 0.5px solid #e5e5e5;
+  border-radius: 4px;
   position: relative;
 
   &:hover,
@@ -110,9 +112,9 @@ const Selection = styled.div.attrs((props: IWrapper) => {
 `;
 
 function stringify<F>(option: F) {
-  return typeof option === 'object'
+  return typeof option === "object"
     ? option === null
-      ? ''
+      ? ""
       : JSON.stringify(option)
     : option;
 }
@@ -124,12 +126,14 @@ function Select<F>(props: {
   selectionView?: (selected: any) => JSX.Element;
   optionView?: (props: any) => JSX.Element;
 }) {
-  const { options, optionView, selectionView, defaultValue, label } = props;
+  const { options, optionView, selectionView, defaultValue, label } =
+    props;
   const [selected, setSelected] = React.useState<F | null>(
     defaultValue || null
   );
   const [selecting, setSelecting] = React.useState(false);
 
+  const ref = React.useRef<any>();
   const makeSelection = (key: number) => (e: any) => {
     setSelected(options[key]);
     setSelecting(false);
@@ -137,27 +141,31 @@ function Select<F>(props: {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper ref={ref}>
         <Selection onClick={(e) => setSelecting((sel) => !sel)}>
-          <div className={selected ? 'minify' : ''}> {label} </div>
+          <div className={selected ? "minify" : ""}> {label} </div>
           <p>
             {selectionView
-              ? selectionView({ selected })
+              ? selected
+                ? selectionView({ option: selected })
+                : ""
               : stringify<F>(selected!)}
           </p>
           <DownCaret
             style={{
               transform: selecting
-                ? 'translateY(-50%) rotate(180deg)'
-                : 'translateY(-50%)',
+                ? "translateY(-50%) rotate(180deg)"
+                : "translateY(-50%)",
             }}
           />
         </Selection>
-        <Options style={{ display: selecting ? 'block' : 'none' }}>
+        <Options style={{ display: selecting ? "block" : "none" }}>
           <ul>
             {options.map((option, idx) => (
               <li key={idx} onClick={makeSelection(idx)}>
-                {optionView ? optionView({ option }) : stringify<F>(option)}
+                {optionView
+                  ? optionView({ option })
+                  : stringify<F>(option)}
               </li>
             ))}
           </ul>

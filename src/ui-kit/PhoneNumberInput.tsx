@@ -1,7 +1,7 @@
-import React from 'react';
-import { InputProps } from 'types/ui-kit';
-import PhoneInput from 'react-phone-number-input';
-import styled from 'styled-components';
+import React from "react";
+import { InputProps } from "types/ui-kit";
+import PhoneInput from "react-phone-number-input";
+import styled from "styled-components";
 
 const fontSizeColor = (props: any) => {
   const inputShrinkSize = `calc(${props.theme.sizes.font.default} - 0.2rem);`;
@@ -24,14 +24,23 @@ const Wrapper = styled.div`
     --PhoneInputCountrySelectArrow-borderWidth: 1px;
     --PhoneInputCountrySelectArrow-opacity: 0.45;
     --PhoneInputCountrySelectArrow-color: inherit;
-    --PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
+    --PhoneInputCountrySelectArrow-color--focus: var(
+      --PhoneInput-color--focus
+    );
     --PhoneInputCountrySelectArrow-transform: rotate(45deg);
     --PhoneInputCountryFlag-aspectRatio: 1.5;
     --PhoneInputCountryFlag-height: 1em;
     --PhoneInputCountryFlag-borderWidth: 1px;
     --PhoneInputCountryFlag-borderColor: rgba(0, 0, 0, 0.5);
-    --PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
-    --PhoneInputCountryFlag-backgroundColor--loading: rgba(0, 0, 0, 0.1);
+    --PhoneInputCountryFlag-borderColor--focus: var(
+      --PhoneInput-color--focus
+    );
+    --PhoneInputCountryFlag-backgroundColor--loading: rgba(
+      0,
+      0,
+      0,
+      0.1
+    );
   }
   position: relative;
   width: 100%;
@@ -49,8 +58,12 @@ const Wrapper = styled.div`
     width: 100%;
     padding: ${(props) => props.theme.sizes.input.padding};
     padding-left: 10rem;
-    padding-bottom: calc(${(props) => props.theme.sizes.font.default} - 0.6rem);
-    padding-top: calc(${(props) => props.theme.sizes.font.default} + 0.6rem);
+    padding-bottom: calc(
+      ${(props) => props.theme.sizes.font.default} - 0.6rem
+    );
+    padding-top: calc(
+      ${(props) => props.theme.sizes.font.default} + 0.6rem
+    );
     height: ${(props) => props.theme.sizes.input.height};
     background-color: transparent !important;
     border: 0.5px solid #e5e5e5;
@@ -59,7 +72,9 @@ const Wrapper = styled.div`
   }
   .PhoneInput--focus ~ label,
   & label.minify {
-    padding-top: calc(${(props) => props.theme.sizes.font.default} - 0.6rem);
+    padding-top: calc(
+      ${(props) => props.theme.sizes.font.default} - 0.6rem
+    );
     ${(props) => fontSizeColor(props)};
     height: calc(${(props) => props.theme.sizes.input.height} / 2);
     z-index: -1;
@@ -87,7 +102,9 @@ const Wrapper = styled.div`
   }
 
   .PhoneInputCountryIcon--border {
-    background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
+    background-color: var(
+      --PhoneInputCountryFlag-backgroundColor--loading
+    );
     box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
         var(--PhoneInputCountryFlag-borderColor),
       inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
@@ -140,7 +157,7 @@ const Wrapper = styled.div`
 
   .PhoneInputCountrySelectArrow {
     display: block;
-    content: '';
+    content: "";
     width: 1.2rem;
     height: 1.2rem;
     margin-right: 0.6rem;
@@ -191,12 +208,12 @@ export default function PhoneNumberInput({
 
   const onClick = () => {
     const parent = labelEl.current!.parentElement! as HTMLDivElement;
-    parent.querySelector('input')?.focus();
+    parent.querySelector("input")?.focus();
   };
 
   const monitorInput = (e: any) => {
-    if (e) labelEl.current!.classList.add('minify');
-    else labelEl.current!.classList.remove('minify');
+    if (e) labelEl.current!.classList.add("minify");
+    else labelEl.current!.classList.remove("minify");
     if (props.onChange) props.onChange(e);
   };
 

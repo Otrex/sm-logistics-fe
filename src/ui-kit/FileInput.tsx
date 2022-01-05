@@ -1,7 +1,6 @@
-import { InputProps } from 'types/ui-kit';
-import React from 'react';
-import IconedInput from './IconedInput';
-import styled, { ThemedStyledProps } from 'styled-components';
+import { InputProps } from "types/ui-kit";
+import React from "react";
+import styled, { ThemedStyledProps } from "styled-components";
 
 type IWrapper = ThemedStyledProps<
   Pick<
@@ -9,7 +8,7 @@ type IWrapper = ThemedStyledProps<
       React.HTMLAttributes<HTMLLabelElement>,
       HTMLLabelElement
     >,
-    'key' | keyof React.HTMLAttributes<HTMLLabelElement>
+    "key" | keyof React.HTMLAttributes<HTMLLabelElement>
   > & { paddingLeft?: string; paddingSide?: string },
   any
 >;
@@ -44,7 +43,7 @@ const FileLabel = styled.label.attrs((props: IWrapper) => {
   height: ${(props) => props.theme.sizes.input.height};
   background-color: transparent !important;
   border: 0.5px solid #e5e5e5;
-
+  border-radius: 4px;
   &:hover,
   & *:hover {
     background-color: whitesmoke;
@@ -94,7 +93,7 @@ const FileLabel = styled.label.attrs((props: IWrapper) => {
     background: #f2f2f2;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     width: inherit;
     height: calc(${(props) => props.theme.sizes.input.height} - 1rem);
   }
@@ -102,7 +101,7 @@ const FileLabel = styled.label.attrs((props: IWrapper) => {
 
 export default function FileInput(props: InputProps) {
   const { onChange, label } = props;
-  const [fileNames, setFileNames] = React.useState<string>('');
+  const [fileNames, setFileNames] = React.useState<string>("");
 
   const inputFocus = (e: any) => {
     const input = e.target.parentElement.parentElement.children[2];
@@ -118,10 +117,10 @@ export default function FileInput(props: InputProps) {
     <>
       <Wrapper onClick={inputFocus}>
         <FileLabel>
-          <div className={fileNames ? 'minify' : ''}> {label} </div>
+          <div className={fileNames ? "minify" : ""}> {label} </div>
           <p> {fileNames} </p>
         </FileLabel>
-        <div style={{ cursor: 'pointer' }}> Upload </div>
+        <div style={{ cursor: "pointer" }}> Upload </div>
         <HiddenInput {...props} onChange={getFile} type="file" />
       </Wrapper>
     </>

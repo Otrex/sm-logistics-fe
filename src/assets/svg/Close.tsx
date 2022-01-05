@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ISVGProps extends React.SVGProps<SVGSVGElement> {
   stroke: string;
@@ -33,7 +33,7 @@ function Close({ stroke, ...props }: ISVGProps) {
 }
 
 Close.defaultProps = {
-  stroke: '#4F4F4F',
+  stroke: "#4F4F4F",
 };
 
 export default Close;

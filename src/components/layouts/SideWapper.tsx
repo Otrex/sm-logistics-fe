@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.bg_colors.accent.dark_blue};
+  background-color: ${(props) =>
+    props.theme.bg_colors.accent.dark_blue};
   background-image: url(${(props) => props.theme.pattern});
   background-position: left 105%;
   background-repeat: no-repeat;
@@ -19,8 +20,8 @@ export const FlexiWrapper = styled.div<{
   right?: string;
 }>`
   position: absolute;
-  ${(props) => (props.top ? resolver('top', props.top) : '')}
-  ${(props) => (props.left ? resolver('left', props.left) : '')}
-  ${(props) => (props.right ? resolver('right', props.right) : '')}
-  ${(props) => (props.bottom ? resolver('bottom', props.bottom) : '')}
+  ${(props) => (props.top ? resolver("top", props.top) : "")}
+  ${(props) => (props.left ? resolver("left", props.left) : "")}
+  ${(props) => (props.right ? resolver("right", props.right) : "")}
+  ${(props) => (props.bottom ? resolver("bottom", props.bottom) : "")}
 `;

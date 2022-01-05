@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ISVGProps extends React.SVGProps<SVGSVGElement> {
   pathFill: string;
@@ -52,9 +52,9 @@ const Send = ({ pathFill, ...props }: ISVGProps) => {
 };
 
 Send.defaultProps = {
-  pathFill: '#03045E',
-  width: '32',
-  height: '32',
+  pathFill: "#03045E",
+  width: "32",
+  height: "32",
 };
 
 export default Send;

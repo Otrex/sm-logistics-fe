@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ISVGProps extends React.SVGProps<SVGSVGElement> {
   stroke: string;
@@ -54,7 +54,7 @@ function Hide({ stroke, ...props }: ISVGProps) {
 }
 
 Hide.defaultProps = {
-  stroke: '#4F4F4F',
+  stroke: "#4F4F4F",
 };
 
 export default Hide;

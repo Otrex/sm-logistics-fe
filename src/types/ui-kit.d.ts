@@ -1,8 +1,8 @@
 import {
   InputHTMLAttributes,
   ButtonHTMLAttributes,
-  AHTMLAttributes,
-} from 'react';
+  AnchorHTMLAttributes,
+} from "react";
 
 export type IconType = {
   hover?: boolean;
@@ -23,8 +23,9 @@ export type CardProps = {
   borderColor?: string;
 };
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  getRef?: MutableRefObject<HTMLLabelElement>;
+export interface InputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
+  getRef?: MutableRefObject<HTMLInputElement>;
   labelClass?: string;
   label: string;
   wrapperClass?: string;
@@ -32,7 +33,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   paddingLeft?: string;
 }
 
-export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   textColor?: string;
   bgColor?: string;
   width?: string;
@@ -40,7 +42,10 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   borderRadius?: string;
 }
 
-export interface IAProps extends AHTMLAttributes<HTMLAElement> {
+export interface IAProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement> {
   underline: boolean;
   accent: boolean;
+  children?: any;
+  className?: string;
 }

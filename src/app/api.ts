@@ -1,6 +1,21 @@
-import config from '@app/config';
-import axios from 'axios';
-import { RequestMethod, RequestOptions } from 'types/app';
+import config from "@app/config";
+import axios from "axios";
+
+export enum RequestMethod {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  PATCH = "PATCH",
+  DELETE = "DELETE",
+}
+
+export interface RequestOptions {
+  method: RequestMethod;
+  url: string;
+  data?: Record<string, any>;
+  params?: Record<string, any>;
+  contentType?: string;
+}
 
 // axios.defaults.baseURL = process.env.REACT_APP_BE_URL;
 const instance = axios.create();
@@ -14,7 +29,7 @@ export default class API {
 
   __parseCookie(): Record<string, any> {
     return Object.fromEntries(
-      window.document.cookie.split(';').map((el) => el.split('='))
+      window.document.cookie.split(";").map((el) => el.split("="))
     );
   }
 
@@ -32,9 +47,13 @@ export default class API {
         ...params,
       },
       headers: {
-        'Content-Type':
-          contentType !== undefined ? contentType : 'application/json',
-        ...(this.token ? { Authorization: `Bearer ${this.token}` } : {}),
+        "Content-Type":
+          contentType !== undefined
+            ? contentType
+            : "application/json",
+        ...(this.token
+          ? { Authorization: `Bearer ${this.token}` }
+          : {}),
       },
     });
   }
@@ -42,18 +61,20 @@ export default class API {
   async __request(requestOptions: RequestOptions) {
     const { method, data, params, contentType } = requestOptions;
     let { url } = requestOptions;
-    let query = '';
+    let query = "";
 
     if (method === RequestMethod.GET) {
       query = Object.entries(data as Record<string, any>)
         .map(([key, value]) => `${key}=${value}`)
-        .join('&');
+        .join("&");
 
       query = `?${query}`;
     }
 
     try {
-      url = url.includes('http') ? url : `${this.baseURI}${url}${query}`;
+      url = url.includes("http")
+        ? url
+        : `${this.baseURI}${url}${query}`;
       const res: any = await this.__jsonRequest({
         method,
         url,
@@ -62,7 +83,7 @@ export default class API {
         contentType,
       });
 
-      if (res.data.status === 'success') {
+      if (res.data.status === "success") {
         return res.data;
       }
       return Promise.reject(res.data);
@@ -70,16 +91,16 @@ export default class API {
       if (e.response) {
         if (e.response.status === 401) {
           window.document.cookie =
-            'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           window.document.cookie =
-            'account=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            "account=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           window.document.cookie =
-            'kyc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          if (!window.location.toString().includes('login')) {
-            window.location.href = '/';
+            "kyc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          if (!window.location.toString().includes("login")) {
+            window.location.href = "/";
           }
 
-          if (typeof this.expireCallback === 'function') {
+          if (typeof this.expireCallback === "function") {
             this.expireCallback();
           }
         }

@@ -1,7 +1,7 @@
-import { InputProps } from 'types/ui-kit';
-import React from 'react';
-import styled from 'styled-components';
-import Input from './Input';
+import { InputProps } from "types/ui-kit";
+import React from "react";
+import styled from "styled-components";
+import Input from "./Input";
 
 const Wrapper = styled.div<{ left?: boolean }>`
   position: relative;
@@ -9,7 +9,7 @@ const Wrapper = styled.div<{ left?: boolean }>`
     position: absolute;
     top: 0;
     padding: ${(props) => props.theme.sizes.input.padding};
-    ${(props) => (props.left ? 'left: 0' : 'right: 0')};
+    ${(props) => (props.left ? "left: 0" : "right: 0")};
     display: flex;
     align-items: center;
     justify-content: center;

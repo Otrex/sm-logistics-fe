@@ -1,8 +1,8 @@
-import Hide from '@assets/svg/Hide';
-import { InputProps } from 'types/ui-kit';
-import React, { useState } from 'react';
-import IconedInput from './IconedInput';
-import Check from '@assets/svg/Check';
+import Hide from "@assets/svg/Hide";
+import { InputProps } from "types/ui-kit";
+import React, { useState } from "react";
+import IconedInput from "./IconedInput";
+import Check from "@assets/svg/Check";
 
 export default function PasswordInput({
   confirmed,
@@ -12,7 +12,8 @@ export default function PasswordInput({
   return (
     <IconedInput
       {...props}
-      type={show ? 'text' : 'password'}
+      type={show ? "text" : "password"}
+      autoComplete="true"
       paddingSide="50px"
       icon={
         !confirmed ? (

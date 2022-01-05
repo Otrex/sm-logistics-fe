@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ISVGProps extends React.SVGProps<SVGSVGElement> {
   stroke: string;
@@ -26,7 +26,7 @@ const DownCaret = ({ stroke, ...props }: ISVGProps) => {
 };
 
 DownCaret.defaultProps = {
-  stroke: 'black',
+  stroke: "black",
 };
 
 export default DownCaret;

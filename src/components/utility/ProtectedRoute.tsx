@@ -1,5 +1,5 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
 
 type ProtectedRouteProps = {
   children: React.FC | React.CElement<any, any>;
@@ -18,7 +18,10 @@ export const ProtectedRoute = (props: ProtectedRouteProps) => {
           children
         ) : (
           <Redirect
-            to={{ pathname: redirectTo || '/', state: { from: location } }}
+            to={{
+              pathname: redirectTo || "/",
+              state: { from: location },
+            }}
           />
         );
       }}

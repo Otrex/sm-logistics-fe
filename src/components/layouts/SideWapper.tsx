@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ noBg?: boolean }>`
   background-color: ${(props) =>
-    props.theme.bg_colors.accent.dark_blue};
+    !props.noBg
+      ? props.theme.bg_colors.accent.dark_blue
+      : "transparent"};
   background-image: url(${(props) => props.theme.pattern});
   background-position: left 105%;
   background-repeat: no-repeat;
+  background-size: contain;
   height: 100vh;
   width: 100%;
   position: relative;

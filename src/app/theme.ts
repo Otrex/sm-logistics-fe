@@ -40,6 +40,7 @@ const theme = {
     input: {
       padding: "1.5rem",
       height: "5.2rem",
+      otp: "7.2rem",
     },
   },
 };

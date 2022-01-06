@@ -79,7 +79,10 @@ function RegisterPanel({ stateMngr: state }: any) {
                 </P>
               </div>
               <div className="md:ml-5 w-full">
-                <AccentButton onClick={state.register}>
+                <AccentButton
+                  onClick={state.register}
+                  disabled={state.isReady}
+                >
                   Sign Up
                 </AccentButton>
               </div>

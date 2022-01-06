@@ -10,3 +10,12 @@ export type RegistrationParams = {
   lastName: string;
   phoneNumber: string;
 };
+
+export type ForgotPasswordParams = {
+  email: string;
+};
+
+export type ResetPasswordParams = {
+  password: string;
+  token: string;
+};

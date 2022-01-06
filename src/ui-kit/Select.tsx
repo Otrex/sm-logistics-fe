@@ -1,7 +1,7 @@
 import DownCaret from "@assets/svg/DownCaret";
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect } from "react";
 import styled, { ThemedStyledProps } from "styled-components";
+
 type IWrapper = ThemedStyledProps<
   Pick<
     React.DetailedHTMLProps<
@@ -122,12 +122,19 @@ function stringify<F>(option: F) {
 function Select<F>(props: {
   label: string;
   options: F[];
+  onChange?: (value: any) => void;
   defaultValue?: F;
   selectionView?: (selected: any) => JSX.Element;
   optionView?: (props: any) => JSX.Element;
 }) {
-  const { options, optionView, selectionView, defaultValue, label } =
-    props;
+  const {
+    options,
+    optionView,
+    selectionView,
+    defaultValue,
+    label,
+    onChange,
+  } = props;
   const [selected, setSelected] = React.useState<F | null>(
     defaultValue || null
   );
@@ -138,6 +145,11 @@ function Select<F>(props: {
     setSelected(options[key]);
     setSelecting(false);
   };
+
+  useEffect(() => {
+    onChange && onChange(selected);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected]);
 
   return (
     <>

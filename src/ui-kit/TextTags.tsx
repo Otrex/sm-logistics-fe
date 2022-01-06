@@ -24,7 +24,6 @@ export const H2 = styled.h2`
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0.04em;
-  text-align: left;
 `;
 
 export const H3 = styled.h3`
@@ -65,6 +64,15 @@ export const P = styled.p`
   letter-spacing: 0.04em;
 `;
 
+export const P2 = styled.p`
+  font-family: Poppins;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+`;
+
 export const A = styled.a<IAProps | any>`
   ${(props) => (props.underline ? "text-decoration: underline;" : "")}
   ${(props) =>
@@ -72,4 +80,5 @@ export const A = styled.a<IAProps | any>`
       ? `color: ${props.theme.text_color.accent.orange};`
       : ""}
   cursor: pointer;
+  font-size: inherit;
 `;

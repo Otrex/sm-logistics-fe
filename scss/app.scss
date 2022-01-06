@@ -8,8 +8,52 @@
   }
 }
 
+.translate {
+  &-y {
+    &-100 {
+      transform: translateY(100%);
+    }
+    &-50 {
+      transform: translateY(50%);
+    }
+  }
+}
+
+.txt-color {
+  &-red {
+    color: red;
+  }
+  &-4F4F4F {
+    color: #4F4F4F;
+  }
+}
+.pp {
+  &-20 {
+    padding: 20%;
+  }
+  &x {
+    &-20 {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  }
+}
 .shadow-panel {
   box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.05),
     0px 25px 35px rgba(51, 51, 51, 0.03);
   border-radius: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .mpp {
+    &-2_7 {
+      padding: 20%;
+    }
+    &x {
+      &-2_7 {
+        padding-left: 2.7rem !important;
+        padding-right: 2.7rem !important;
+      }
+    }
+  }
 }

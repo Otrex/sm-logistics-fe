@@ -1,22 +1,24 @@
+import { r } from "@app/utils";
 import { useRef } from "react";
 import styled from "styled-components";
 
 const Input = styled.input`
-  width: ${(props) => props.theme.sizes.input.height};
-  height: ${(props) => props.theme.sizes.input.height};
+  width: ${(props) => props.theme.sizes.input.otp};
+  height: ${(props) => props.theme.sizes.input.otp};
   border: 0.5px solid #e5e5e5;
-  border-radius: 4px;
+  border-radius: 12px;
   text-align: center;
 `;
 
 type IOtpInput = {
   amount: number;
-  onCompleted: (data: any) => void;
-  onChange: (data: any) => void;
+  className?: string;
+  onCompleted?: (data: any) => void;
+  onChange?: (data: any) => void;
 };
 
 const OtpInput = (props: IOtpInput) => {
-  const { amount, onCompleted, onChange } = props;
+  const { amount, onCompleted, onChange, className } = props;
   const data = Array(amount).fill("");
   const ref = useRef<any>(null);
 
@@ -49,16 +51,19 @@ const OtpInput = (props: IOtpInput) => {
       }
     } else if (currenField < amount - 1) {
       inputs[currenField + 1].focus();
-    } else {
+    } else if (currenField === amount - 1) {
       value = getValues();
-      onCompleted(value);
+      onCompleted && onCompleted(value);
     }
     value = getValues();
-    onChange(value);
+    onChange && onChange(value);
   };
 
   return (
-    <div ref={ref} className="flex flex-row justify-between">
+    <div
+      ref={ref}
+      className={r(["flex flex-row justify-between", className!])}
+    >
       {data.map((_, idx) => (
         <Input
           key={idx}
@@ -69,6 +74,15 @@ const OtpInput = (props: IOtpInput) => {
           onFocus={checkIfShouldBeOn}
         />
       ))}
+      <Input
+        key={data.length}
+        style={{ display: "none" }}
+        tabIndex={data.length}
+        maxLength={1}
+        onKeyUp={nextInput}
+        autoComplete={"off"}
+        onFocus={checkIfShouldBeOn}
+      />
     </div>
   );
 };

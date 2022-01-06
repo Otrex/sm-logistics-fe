@@ -13,9 +13,9 @@ export const IconRounded = styled.i.attrs((props: IconType) => ({
   ...props,
 }))`
   width: ${(props) =>
-    props.large ? "7rem" : props.size ? props.size : "5.2rem"};
+    props.large ? "7.2rem" : props.size ? props.size : "5.2rem"};
   height: ${(props) =>
-    props.large ? "7rem" : props.size ? props.size : "5.2rem"};
+    props.large ? "7.2rem" : props.size ? props.size : "5.2rem"};
   border-radius: 50%;
   display: flex;	
   justify-content: center;
@@ -96,5 +96,6 @@ export const Button = styled.button<IButtonProps>`
 
 export const AccentButton = styled(Button)`
   background-color: ${(props) => props.theme.bg_colors.accent.orange};
-  color: ${(props) => props.theme.text_color.accent.dark_blue};
+  color: #4A4A8B;
+  font-weight: 500;
 `;

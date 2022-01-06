@@ -1,14 +1,19 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { StateManager } from "@app/utils";
+import { useState } from "react";
 import { FormSetterType } from "types/app.t";
 
 type FormType = { email: string; password: string };
 
 export default class LoginLogic extends StateManager<any> {
+  setMatch!: React.Dispatch<React.SetStateAction<boolean>>;
   setform!: FormSetterType;
+  isReady!: boolean;
   form!: FormType;
   sata: any;
 
   setup() {
+    [this.isReady, this.setMatch] = useState<boolean>(false);
     const [form, setform] = this.formState({
       email: "",
       password: "",

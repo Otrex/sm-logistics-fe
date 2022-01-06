@@ -2,10 +2,9 @@ import React from "react";
 import { A, H1, P } from "@ui-kit/TextTags";
 import TextInput from "@ui-kit/Input";
 import PasswordInput from "@ui-kit/PasswordInput";
-import { AccentButton, Button } from "@ui-kit/ComponentTags";
+import { AccentButton } from "@ui-kit/ComponentTags";
 
-function LoginPanel(props: any) {
-  const { stateMngr: state } = props;
+function LoginPanel({ stateMngr: state }: any) {
   return (
     <>
       <div className="flex items-center justify-center w-full p-11">
@@ -26,13 +25,18 @@ function LoginPanel(props: any) {
               onChange={state.setPassword}
             />
 
-            <div className="text-right mt-5" ref={state.ref}>
+            <div className="text-right mt-5">
               <A accent href="https://google.com">
                 Forgot Password?
               </A>
             </div>
           </div>
-          <AccentButton onClick={state.login}>Login</AccentButton>
+          <AccentButton
+            onClick={state.login}
+            disabled={state.isReady}
+          >
+            Login
+          </AccentButton>
           <P className="text-center mt-9">
             Dont have an account?&nbsp;
             <A href="/client/register" accent underline>

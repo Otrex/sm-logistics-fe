@@ -17,6 +17,7 @@ function App() {
         <Switch>
           {/* <Route exact path="/" component={Rider}/> */}
           <Route exact path="/client*" component={Client} />
+          <Route exact path="/rider*" component={Rider} />
           {/* <Route exact path="/test" component={Test} /> */}
         </Switch>
       </Router>

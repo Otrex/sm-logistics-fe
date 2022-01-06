@@ -1,6 +1,3 @@
-import React from "react";
-import Test from "@pages/Test";
-
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +8,10 @@ import { ProtectedRoute } from "@components/utility/ProtectedRoute";
 import Dashboard from "./dashboard";
 import { urlPath } from "@app/utils";
 import Register from "./auth/Register";
+import ForgotPassword from "./auth/ForgotPassword";
+import ResetPassword from "./auth/ResetPassword";
+import EmailVerify from "./auth/EmailVerify";
+import Verified from "./auth/Verified";
 const url = urlPath("/client");
 
 const NotFound = () => {
@@ -31,6 +32,27 @@ function Client() {
         <Switch>
           <Route exact component={Login} path={url("/login")} />
           <Route exact component={Register} path={url("/register")} />
+          <Route
+            exact
+            component={ForgotPassword}
+            path={url("/forgot-password")}
+          />
+          <Route
+            exact
+            component={ResetPassword}
+            path={url("/reset-password/:token")}
+          />
+          <Route
+            exact
+            component={EmailVerify}
+            path={url("/email-verify")}
+          />
+          <ProtectedRoute
+            unlock={true}
+            redirectTo={url("/email-verify")}
+            path={url("/verified")}
+            children={<Verified />}
+          />
           <ProtectedRoute
             unlock={true}
             redirectTo={url()}

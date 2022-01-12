@@ -3,14 +3,17 @@ import { LoginParams, RegistrationParams } from "types/api";
 import api from "@api/auth";
 
 export default class AuthAction {
-  static title = "riderAuth";
+  static title = "clientAuth";
   static formName = (name: string) => `${AuthAction.title}/${name}`;
 
   static login = createAsyncThunk(
     AuthAction.formName("login"),
-    async (data: LoginParams) => {
-      const res = await api.loginClient(data);
-      return { data: "red" };
+    async (data: LoginParams, { rejectWithValue }) => {
+      try {
+        return api.loginClient(data);
+      } catch (err: any) {
+        return rejectWithValue(err);
+      }
     }
   );
 

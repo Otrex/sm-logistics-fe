@@ -11,8 +11,10 @@ import { updateStateObject } from "./utils";
 export type FormStateType = typeof useFormState;
 export type UseEffectType = typeof React.useEffect;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
+
 export const useAppSelector: TypedUseSelectorHook<RootState> =
   useSelector;
+
 export const useNavigator = () => {
   const [coords, setCoords] = React.useState({});
   React.useEffect(() => {
@@ -27,6 +29,7 @@ export const useNavigator = () => {
 
   return coords;
 };
+
 export const useRouteChange = (route: string) => {
   const [bg, setBg] = React.useState(true);
   const router = useRouteMatch().url;

@@ -104,13 +104,16 @@ export default function FileInput(props: InputProps) {
   const [fileNames, setFileNames] = React.useState<string>("");
 
   const inputFocus = (e: any) => {
-    const input = e.target.parentElement.parentElement.querySelector("[type='file']");
+    const input =
+      e.target.parentElement.parentElement.querySelector(
+        "[type='file']"
+      );
     input && input.click();
   };
 
   const getFile = (e: any) => {
-    const file = e.target.files[0]
-    setFileNames( file && file.name);
+    const file = e.target.files[0];
+    setFileNames(file && file.name);
     if (onChange) onChange(e);
   };
 

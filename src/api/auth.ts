@@ -10,17 +10,6 @@ export enum RequestMethod {
 }
 
 export class AuthApi extends Api {
-  loginClient = async (data: LoginParams) => {
-    return new Promise<{ data: { [key: string]: any } }>((resolve) =>
-      setTimeout(() => resolve({ data: { status: "success" } }), 5000)
-    );
-    // return this.__request({
-    //   method: RequestMethod.POST,
-    //   url: '/account/api/login',
-    //   data,
-    // });
-  };
-
   logoutClient = async () => {
     return this.__request({
       method: RequestMethod.GET,
@@ -28,34 +17,35 @@ export class AuthApi extends Api {
     });
   };
 
+  loginClient = async (data: LoginParams) => {
+    return this.__request({
+      method: RequestMethod.POST,
+      url: "/v1/auth/login",
+      data: { ...data, type: "client" },
+    });
+  };
+
   registerClient = async (data: RegistrationParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/register",
-      data,
+      url: "/v1/auth/register",
+      data: { ...data, type: "client" },
     });
   };
 
   loginRider = async (data: LoginParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/login",
-      data,
-    });
-  };
-
-  logoutRider = async () => {
-    return this.__request({
-      method: RequestMethod.GET,
-      url: "/account/api/logout",
+      url: "/v1/auth/login",
+      data: { ...data, type: "rider" },
     });
   };
 
   registerRider = async (data: RegistrationParams) => {
     return this.__request({
       method: RequestMethod.POST,
-      url: "/account/api/register",
-      data,
+      url: "/v1/auth/register",
+      data: { ...data, type: "rider" },
     });
   };
 }

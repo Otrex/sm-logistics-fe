@@ -16,6 +16,7 @@ export type IconType = {
 
 export type CardProps = {
   active?: boolean;
+  accent?: boolean;
   color?: string;
   bgColor?: string;
   textColor?: string;

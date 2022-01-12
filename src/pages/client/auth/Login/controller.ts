@@ -1,15 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { StateManager } from "@app/utils";
+import { LoginParams } from "types/api";
 import { useState } from "react";
 import { FormSetterType } from "types/app.t";
-
-type FormType = { email: string; password: string };
 
 export default class LoginLogic extends StateManager<any> {
   setMatch!: React.Dispatch<React.SetStateAction<boolean>>;
   setform!: FormSetterType;
   isReady!: boolean;
-  form!: FormType;
+  form!: LoginParams;
   sata: any;
 
   setup() {
@@ -41,4 +40,14 @@ export default class LoginLogic extends StateManager<any> {
     this.validateForm();
     await this.props.login(this.form);
   };
+
+  watch() {
+    this.effect(() => {
+      if (!this.form.email && !this.form.password) {
+        this.setMatch(true);
+      } else {
+        this.setMatch(false);
+      }
+    }, [this.form]);
+  }
 }

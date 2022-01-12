@@ -54,6 +54,9 @@ body * {
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
 }
+.b-t-1px-F2F2F2 {
+  border-top: 1px solid #f2f2f2;
+}
 .txt-color-red {
   color: red;
 }
@@ -67,6 +70,42 @@ body * {
   padding-left: 20%;
   padding-right: 20%;
 }
+.pt-5_2 {
+  padding-top: 5.2rem;
+}
+.pt-5_8 {
+  padding-top: 5.8rem;
+}
+.pb-5_2 {
+  padding-bottom: 5.2rem;
+}
+.pb-5_8 {
+  padding-bottom: 5.8rem;
+}
+.pl-12p {
+  padding-left: 12%;
+}
+.cb-E5E5E5 {
+  background-color: #e5e5e5;
+}
+.cb-E5E5E5-25 {
+  background-color: rgba(229, 229, 229, 0.25);
+}
+.cb-FFF8EC {
+  background-color: #fff8ec;
+}
+.cb-FFF8EC-25 {
+  background-color: rgba(255, 248, 236, 0.25);
+}
+.cb-03045E {
+  background-color: #03045e;
+}
+.cb-03045E-25 {
+  background-color: rgba(3, 4, 94, 0.25);
+}
+.c-E5E5E5 {
+  color: #e5e5e5;
+}
 .shadow-panel {
   -webkit-box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.05),
     0px 25px 35px rgba(51, 51, 51, 0.03);
@@ -74,12 +113,23 @@ body * {
     0px 25px 35px rgba(51, 51, 51, 0.03);
   border-radius: 12px;
 }
+.action-btn {
+  padding: 1.6rem 1.3rem !important;
+  font-family: Poppins;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.08em !important;
+  color: #03045e !important;
+  width: auto !important;
+}
 @media screen and (max-width: 600px) {
   .mpp-2_7 {
     padding: 20%;
   }
   .mppx-2_7 {
-    padding-left: 2.7rem;
-    padding-right: 2.7rem;
+    padding-left: 2.7rem !important;
+    padding-right: 2.7rem !important;
   }
 }

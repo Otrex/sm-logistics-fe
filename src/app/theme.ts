@@ -15,7 +15,7 @@ const theme = {
   },
   bg_colors: {
     icon: {
-      dim: "rgba(174, 175, 203, .32)",
+      dim: "rgba(174, 175, 203, .40)",
       bright: "#FDE8B1",
       hover: "rgba(174, 175, 203, 1)",
     },

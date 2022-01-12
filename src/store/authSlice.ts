@@ -4,6 +4,7 @@ import {
   createSlice,
   PayloadAction,
 } from "@reduxjs/toolkit";
+import AuthAction from "./client/auth/actions";
 
 export enum StatusState {
   IDLE = "IDLE",
@@ -55,6 +56,23 @@ export const authSlice = createSlice({
     builder.addCase(logoutAsync.fulfilled, (state) => {
       state.status = StatusState.IDLE;
       alert("woriking");
+      state.isAuthenticated = false;
+    });
+
+    builder.addCase(
+      AuthAction.login.fulfilled,
+      (state, { payload }) => {
+        state.status = StatusState.IDLE;
+        state.user = payload.account;
+        state.isAuthenticated = false;
+        console.log(state.user);
+      }
+    );
+
+    builder.addCase(AuthAction.login.rejected, (state, payload) => {
+      state.status = StatusState.IDLE;
+      state.user = payload;
+      console.log(state.user);
       state.isAuthenticated = false;
     });
   },

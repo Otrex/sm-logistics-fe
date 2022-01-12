@@ -39,12 +39,17 @@ export const Card = styled.div<CardProps>`
   width: 100%;
   min-height: 188px;
   padding: 1rem;
+  border-width: 1px;
   border-radius: 1rem;
   border-color: ${(props) =>
     props.borderColor ? props.borderColor : "transparent"};
   border-width: ${(props) => props.theme.sizes.ui_card.border_width};
   background-color: ${(props) =>
-    props.bgColor ? props.bgColor : "transparent"};
+    props.bgColor
+      ? props.bgColor
+      : props.accent
+      ? props.theme.bg_colors.accent.orange
+      : "transparent"};
   color: ${(props) =>
     props.textColor
       ? props.textColor
@@ -52,6 +57,11 @@ export const Card = styled.div<CardProps>`
   svg {
     color: ${(props) =>
       props.iconColor ? props.iconColor : "transparent"};
+  }
+
+  p,
+  h3 {
+    color: ${(props) => (props.accent ? "#03045E" : "inherit")};
   }
 `;
 
@@ -96,6 +106,6 @@ export const Button = styled.button<IButtonProps>`
 
 export const AccentButton = styled(Button)`
   background-color: ${(props) => props.theme.bg_colors.accent.orange};
-  color: #4A4A8B;
+  color: #03045e;
   font-weight: 500;
 `;

@@ -23,6 +23,25 @@ export const Wrapper = styled.div<{
   padding: ${(props) => props.padding || "3.2rem"};
 `;
 
+export const WrapperWhite = styled.div<{
+  noBg?: boolean;
+  padding?: string;
+  bgSize?: string;
+  heightCss?: string;
+  topCss?: string;
+  className?: string;
+}>`
+  background-color: #fff;
+  background-image: url(${(props) => props.theme.patternWhite});
+  background-position: left 100%;
+  background-repeat: no-repeat;
+  background-size: ${(props) => props.bgSize || "contain"};
+  height: ${(props) => props.heightCss || "100vh"};
+  width: 100%;
+  position: relative;
+  padding: ${(props) => props.padding || "3.2rem"};
+`;
+
 const resolver = (pos: string, value: string) => `${pos}:${value};`;
 export const FlexiWrapper = styled.div<{
   top?: string;

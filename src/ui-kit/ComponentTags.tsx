@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import searchLogo from "@assets/img/Search.svg";
 import { CardProps, IButtonProps, IconType } from "types/ui-kit";
 
 const imgFull = `
@@ -109,4 +110,18 @@ export const AccentButton = styled(Button)`
   background-color: ${(props) => props.theme.bg_colors.accent.orange};
   color: #03045e;
   font-weight: 500;
+`;
+
+export const SearchInput = styled.input.attrs({})`
+  background-image: url(${searchLogo});
+  background-position: 2.5rem center;
+  background-repeat: no-repeat;
+  border: 0.5px solid #e1e1e1;
+  height: ${(props) => props.theme.sizes.input.height};
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 6.5rem;
+  ::placeholder {
+    color: grey;
+  }
 `;

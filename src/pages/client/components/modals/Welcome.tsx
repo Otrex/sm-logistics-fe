@@ -4,13 +4,17 @@ import { PropState } from "types/app.t";
 import { AccentButton, Button } from "@ui-kit/ComponentTags";
 import { ModalContent } from "@ui-kit/Modal";
 import { H2, P } from "@ui-kit/TextTags";
+import confetti from "@assets/img/confetti.png";
 import React from "react";
 
 export default function Welcome({
   stateMngr: state,
 }: PropState<DashboardHomeController>) {
   return (
-    <ModalContent width="47.4rem" className="rounded-2xl">
+    <ModalContent
+      width="47.4rem"
+      className="rounded-2xl w-full md:w-auto"
+    >
       <Wrapper
         bgSize="100%"
         heightCss="11rem"
@@ -18,7 +22,14 @@ export default function Welcome({
         padding="inherit"
       ></Wrapper>
       <div className="p-12 welcome-message">
-        <H2>Welcome to SM Logistics</H2>
+        <H2>
+          Welcome to SM Logistics{" "}
+          <img
+            src={confetti}
+            className="align-top inline-block"
+            alt="confetti"
+          />
+        </H2>
         <P className="mb-12 mt-4">
           Hi there, we’re happy to have you here. The SM Logisitics
           app is designed to help you simplify your logistics needs.

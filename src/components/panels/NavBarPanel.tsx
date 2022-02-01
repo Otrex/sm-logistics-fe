@@ -12,7 +12,7 @@ type Props = {
   }[];
   url: (x: string) => string;
   settingsRoutes: {
-    svg?: React.FC;
+    svg?: any;
     name: string;
     path: string;
   }[];
@@ -20,7 +20,7 @@ type Props = {
 };
 
 const Nav = styled.div`
-  height: 100vh;
+  height: 72vh;
   li {
     display: block;
     color: #fff;
@@ -53,9 +53,9 @@ export default function NavBarPanel(props: Props) {
         <div className="text-center mb-24">
           <img src={logo} alt="logo" className="inline-block" />
         </div>
-        <Nav>
+        <Nav className="flex flex-col justify-between">
           <div className="">
-            <ul className="flex sm:flex-col overflow-hidden nav-side">
+            <ul className="flex sm:flex-col overflow-hidden">
               {routes.map((route, idx: number) => (
                 <li key={idx}>
                   <NavLink
@@ -70,9 +70,9 @@ export default function NavBarPanel(props: Props) {
               ))}
             </ul>
           </div>
-          <div className="box">
+          <div className="">
             <div>
-              <ul className="flex sm:flex-col overflow-hidden nav-side">
+              <ul className="flex sm:flex-col overflow-hidden">
                 {settingsRoutes.map((route, idx: number) => (
                   <li key={idx}>
                     <NavLink
@@ -82,10 +82,10 @@ export default function NavBarPanel(props: Props) {
                           ? logout
                           : undefined
                       }
-                      className="mb-4"
+                      className="mb-4 flex flex-row items-center py-4 px-8 rounded-2xl"
                       to={url(route.path)}
                     >
-                      {route.svg}
+                      <div className="pr-4">{route.svg}</div>
                       {route.name}
                     </NavLink>
                   </li>

@@ -1,7 +1,9 @@
 import decorator from "@assets/img/decorator.svg";
+import decoratorWhite from "@assets/img/decoratorWhite.png";
 
 const theme = {
   pattern: decorator,
+  patternWhite: decoratorWhite,
   text_color: {
     default: "#1D1D1B",
     accent: {

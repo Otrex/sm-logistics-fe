@@ -2,7 +2,7 @@
 import { StateManager, urlPath } from "@app/utils";
 import { useState } from "react";
 
-export default class DashboardHomeController extends StateManager<any> {
+export default class DashboardHistoryController extends StateManager<any> {
   url!: (dta: string) => string;
   showModal!: boolean;
   showSideNav!: boolean;

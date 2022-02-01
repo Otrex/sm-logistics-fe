@@ -120,3 +120,26 @@
     }
   }
 }
+
+
+.z-max {
+  z-index: 99999999999999999;
+}
+.w-80p {
+  width: 80%;
+}
+
+.bg-dark-transparent {
+  background: rgba(#1b1b1c, .25);
+}
+
+.nav{
+  &-open {
+    left: 0% !important;
+  }
+  &-slide {
+    transition: all .5s;
+    height: 100vh;
+    left: -100%
+  }
+}

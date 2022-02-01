@@ -3,14 +3,14 @@ import Lay3070 from "@components/layouts/Lay3070";
 import AuthAction from "@store/client/auth/actions";
 import React from "react";
 import AuthSidePanel from "../../components/AuthSidePanel";
-import RegisterPanel from "../../components/RegisterPanel";
+import View from "./view";
 import RegisterController from "./controller";
 
 function Register(props: any) {
   return (
     <Lay3070>
       <AuthSidePanel />
-      <RegisterPanel className="outline" {...props} />
+      <View {...props} />
     </Lay3070>
   );
 }

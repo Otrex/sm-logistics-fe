@@ -3,8 +3,6 @@ import {
   Wrapper,
 } from "@components/layouts/SideWapper";
 import logo from "@assets/img/logo-white.png";
-import mascot from "@assets/img/mascot.png";
-import React from "react";
 import { H1, P } from "@ui-kit/TextTags";
 import styled from "styled-components";
 import loginBg from "@assets/img/SectionBG.png";

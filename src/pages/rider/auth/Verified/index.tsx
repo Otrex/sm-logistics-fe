@@ -1,9 +1,8 @@
 import { LayCenterWithLogo } from "@components/layouts/LayCenter";
-import VerifiedPanel from "@pages/client/components/VerifiedPanel";
+import VerifiedPanel from "@pages/client/auth/Verified/view";
 import React from "react";
 
 export default function Verified(props: any) {
-  const login = () => {};
   return (
     <LayCenterWithLogo>
       <VerifiedPanel {...props} />

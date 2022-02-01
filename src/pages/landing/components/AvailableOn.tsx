@@ -4,7 +4,7 @@ import apple from "@assets/img/DownloadBTN.png";
 import google from "@assets/img/DownloadBTNgoogle.png";
 import phone from "@assets/img/App-Image.png";
 
-export default function AvailableOn({img}: any) {
+export default function AvailableOn({ img }: any) {
   return (
     <Width75p className="pt-24 bg-white">
       <div className="flex flex-row items-center">

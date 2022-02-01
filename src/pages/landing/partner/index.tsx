@@ -29,11 +29,18 @@ const Header = () => (
   <>
     <Width75p className="flex flex-col items-center pb-28 pt-28">
       <div className="text-center">
-        <H152 style={{ color: "#03045E" }}>Own a Bike? Looking for Extra Income?</H152>
+        <H152 style={{ color: "#03045E" }}>
+          Own a Bike? Looking for Extra Income?
+        </H152>
         <P16 className="px-80 mb-12 mt-4">
-        We’re  happy to have you at SM Logistics. Come partner with us and grow your income.
+          We’re happy to have you at SM Logistics. Come partner with
+          us and grow your income.
         </P16>
-        <AccentButton style={{width: "auto", display: "inline-block"}}>Ride with Us!</AccentButton>
+        <AccentButton
+          style={{ width: "auto", display: "inline-block" }}
+        >
+          Ride with Us!
+        </AccentButton>
       </div>
       <div className="flex justify-center mt-44">
         <IconRounded dim>
@@ -105,69 +112,100 @@ const Section3 = () => (
   </>
 );
 
-const OurPeople = () => <>
-  <Width75p className="pt-44 pb-20">
-  <div className="text-center">
-    <H152 style={{ color: "#03045E" }}>Our People</H152>
-    <P16 className="px-80">
-      We cherish our people and love every moment we share
-      together.
-    </P16>
-  </div>
-  <ImageGrid />
-  </Width75p>
-</>
+const OurPeople = () => (
+  <>
+    <Width75p className="pt-44 pb-20">
+      <div className="text-center">
+        <H152 style={{ color: "#03045E" }}>Our People</H152>
+        <P16 className="px-80">
+          We cherish our people and love every moment we share
+          together.
+        </P16>
+      </div>
+      <ImageGrid />
+    </Width75p>
+  </>
+);
 
-
-const Delivering = () => <><Width75p className="pt-44 pb-14">
-  <div className="flex flex-row pb-28">
-    <div className="w-1/2">
-      <H232>We’re dedicated to delivering super-fast dispatch service. You can join us too!</H232>
-    </div>
-    <div className="w-1/2">
-      <P16>At SM Logistics, we are all about convincience and the best quality in service delivery. If you believe you share our goal, we’re very happy to have you on  our team. </P16>
-    </div>
-  </div>
-  <Lay303030>
-    <div className="pr-14">
-      <IconRounded dim><People /></IconRounded>
-      <P16 className="pt-8" bold>Massive Client Pool</P16>
-    </div>
-    <div className="pr-14">
-      <IconRounded dim><Chart /></IconRounded>
-      <P16 className="pt-8" bold>Grow your Earning Potential</P16>
-    </div>
-    <div className="pr-14">
-      <IconRounded dim><EmailDark /></IconRounded>
-      <P16 className="pt-8" bold>Reliable Support</P16>
-    </div>
-  </Lay303030>
-  <Lay303030 className="mt-24">
-    <div>
-      <IconRounded dim><Copy /></IconRounded>
-      <P16 className="pt-8" bold>Operate with a Registered Brand</P16>
-    </div>
-    <div>
-      <IconRounded dim><MenuBox /></IconRounded>
-      <P16 className="pt-8" bold>Web & Mobile Enabled Platform</P16>
-    </div>
-    <div>
-    </div>
-  </Lay303030>
-</Width75p></>
+const Delivering = () => (
+  <>
+    <Width75p className="pt-44 pb-14">
+      <div className="flex flex-row pb-28">
+        <div className="w-1/2">
+          <H232>
+            We’re dedicated to delivering super-fast dispatch service.
+            You can join us too!
+          </H232>
+        </div>
+        <div className="w-1/2">
+          <P16>
+            At SM Logistics, we are all about convincience and the
+            best quality in service delivery. If you believe you share
+            our goal, we’re very happy to have you on our team.{" "}
+          </P16>
+        </div>
+      </div>
+      <Lay303030>
+        <div className="pr-14">
+          <IconRounded dim>
+            <People />
+          </IconRounded>
+          <P16 className="pt-8" bold>
+            Massive Client Pool
+          </P16>
+        </div>
+        <div className="pr-14">
+          <IconRounded dim>
+            <Chart />
+          </IconRounded>
+          <P16 className="pt-8" bold>
+            Grow your Earning Potential
+          </P16>
+        </div>
+        <div className="pr-14">
+          <IconRounded dim>
+            <EmailDark />
+          </IconRounded>
+          <P16 className="pt-8" bold>
+            Reliable Support
+          </P16>
+        </div>
+      </Lay303030>
+      <Lay303030 className="mt-24">
+        <div>
+          <IconRounded dim>
+            <Copy />
+          </IconRounded>
+          <P16 className="pt-8" bold>
+            Operate with a Registered Brand
+          </P16>
+        </div>
+        <div>
+          <IconRounded dim>
+            <MenuBox />
+          </IconRounded>
+          <P16 className="pt-8" bold>
+            Web & Mobile Enabled Platform
+          </P16>
+        </div>
+        <div></div>
+      </Lay303030>
+    </Width75p>
+  </>
+);
 
 export default function Partner() {
   return (
     <div>
       <div className="cb-FFF8EC">
-        <TopNav className="mb-20" active={2}/>
+        <TopNav className="mb-20" active={2} />
         <Header />
       </div>
       <Delivering />
       <OurPeople />
       <RideWithUs />
       <OurServices />
-      <AvailableOn img={info}/>
+      <AvailableOn img={info} />
       <Footer />
     </div>
   );

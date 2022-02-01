@@ -39,7 +39,7 @@ function LoginPanel({ stateMngr: state }: any) {
           </AccentButton>
           <P className="text-center mt-9">
             Dont have an account?&nbsp;
-            <A href="/client/register" accent underline>
+            <A href="/rider/register" accent underline>
               Sign Up
             </A>
           </P>

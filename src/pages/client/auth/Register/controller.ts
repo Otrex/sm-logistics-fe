@@ -12,9 +12,12 @@ export default class RegisterController extends StateManager<any> {
   setform!: FormSetterType;
   isMatch!: boolean;
   setMatch!: React.Dispatch<React.SetStateAction<boolean>>;
+  isReady!: boolean;
+  setReady!: React.Dispatch<React.SetStateAction<boolean>>;
 
   setup() {
     [this.isMatch, this.setMatch] = useState<boolean>(false);
+    [this.isReady, this.setReady] = useState<boolean>(false);
     [this.form, this.setform] = this.formState<RegisterFormType>({
       email: "",
       password: "",

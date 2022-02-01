@@ -94,7 +94,13 @@ export const TopNav = ({ className, active }: any) => {
               </a>
             </li>
             <li>
-              <a href="./partner" className={active === 2 ? "active" : ""}> Partner </a>
+              <a
+                href="./partner"
+                className={active === 2 ? "active" : ""}
+              >
+                {" "}
+                Partner{" "}
+              </a>
             </li>
             <li>
               <a href="./client"> Login </a>

@@ -1,22 +1,19 @@
 import { mapStateOrActionToProps } from "@app/hoc";
 import { LayCenterWithLogo } from "@components/layouts/LayCenter";
-import ResetPasswordPanel from "@pages/client/components/ResetPasswordPanel";
 import AuthAction from "@store/client/auth/actions";
-import React from "react";
-import ResetPasswordController from "./controller";
+import Controller from "./controller";
+import View from "./view";
 
-function ResetPassword(props: {
-  stateMngr: ResetPasswordController;
-}) {
+function ResetPassword(props: any) {
   return (
     <LayCenterWithLogo>
-      <ResetPasswordPanel {...props} />
+      <View {...props} />
     </LayCenterWithLogo>
   );
 }
 
 export default mapStateOrActionToProps({
-  StateManager: ResetPasswordController,
+  StateManager: Controller,
   Component: ResetPassword,
   dispatchActions: {
     resetPassword: AuthAction.resetPassword,

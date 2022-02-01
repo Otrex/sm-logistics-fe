@@ -1,4 +1,5 @@
 import Close from "@assets/svg/Close";
+import { IWrapper } from "types/app.t";
 import React from "react";
 import styled from "styled-components";
 
@@ -47,17 +48,24 @@ const ModalContentWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+export const ModalContent = styled.div<IWrapper>`
+  background-color: white;
+  overflow: hidden;
+  width: ${(props) => props.width || undefined};
+`;
+
 export default function Modal(props: ModalProps) {
-  const { toggleShow, closeBtnClass, whiteCloseBtn } = props;
+  const { toggleShow, closeBtnClass, whiteCloseBtn, show, children } =
+    props;
   const toggle = () => toggleShow(false);
 
   return (
-    <ModalBackdrop className={props.show ? "" : "hide"}>
+    <ModalBackdrop className={show ? "" : "hide"}>
       <ModalContentWrapper>
         <div onClick={toggle} className={closeBtnClass || "close"}>
           <Close stroke={whiteCloseBtn ? "white" : "#4F4F4F"} />
         </div>
-        {props.children}
+        {children}
       </ModalContentWrapper>
       <ModalBackdropCloser onClick={toggle} />
     </ModalBackdrop>

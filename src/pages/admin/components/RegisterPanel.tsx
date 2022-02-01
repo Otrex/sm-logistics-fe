@@ -9,10 +9,10 @@ function RegisterPanel({ stateMngr: state }: any) {
     <>
       <div className="flex items-center justify-center w-full p-11">
         <form name="login">
-          <H1>Sign Up</H1>
+          <H1>Join Us</H1>
           <P className="mt-2">
-            We’ll love to know about you. Please provide your details
-            to help us learn about you.
+            Please provide your details to help us onboard you into
+            our platform.
           </P>
           <div className="mt-12 mb-20 flex flex-col">
             <div className="flex flex-col md:flex-row">
@@ -79,10 +79,7 @@ function RegisterPanel({ stateMngr: state }: any) {
                 </P>
               </div>
               <div className="md:ml-5 w-full">
-                <AccentButton
-                  onClick={state.register}
-                  disabled={state.isReady}
-                >
+                <AccentButton onClick={state.register}>
                   Sign Up
                 </AccentButton>
               </div>

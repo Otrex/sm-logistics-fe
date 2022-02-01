@@ -10,12 +10,12 @@ export const H152 = styled.h1`
 `;
 
 export const H320 = styled.h3`
-font-family: Poppins;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: 30px;
-letter-spacing: 0.04em;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.04em;
 `;
 export const H240 = styled.h2`
   font-family: Poppins;

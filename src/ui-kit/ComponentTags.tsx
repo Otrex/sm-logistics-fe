@@ -38,6 +38,7 @@ export const IconRounded = styled.i.attrs((props: IconType) => ({
 export const Card = styled.div<CardProps>`
   width: 100%;
   min-height: 188px;
+  ${(props) => (props.fullHeight ? "height: 100% !important;" : "")}
   padding: 1rem;
   border-width: 1px;
   border-radius: 1rem;

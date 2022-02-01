@@ -22,6 +22,7 @@ export type CardProps = {
   textColor?: string;
   iconColor?: string;
   borderColor?: string;
+  fullHeight?: boolean;
 };
 
 export interface InputProps

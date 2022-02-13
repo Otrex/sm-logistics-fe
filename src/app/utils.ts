@@ -87,3 +87,7 @@ export class StateManager<Props> implements IStateManager<Props> {
   }
   watch() {}
 }
+
+export const setTitle = (title: string) => {
+  document.title = `SM Logistics - ${title || "Welcome"}`;
+};

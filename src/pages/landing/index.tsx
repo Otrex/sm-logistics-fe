@@ -1,14 +1,14 @@
-import { urlPath } from "@app/utils";
+import { setTitle, urlPath } from "@app/utils";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from "react-router-dom";
-import About from "./about";
-import Home from "./home";
-import Partner from "./partner";
-import Support from "./support";
-import Terms from "./terms";
+import About from "./About";
+import Home from "./Home";
+import Partner from "./Partner";
+import Support from "./Support";
+import Terms from "./Terms";
 
 const url = urlPath("/h");
 
@@ -24,6 +24,7 @@ const NotFound = () => {
 };
 
 function Landing() {
+  setTitle("Welcome User");
   return (
     <>
       <Router>

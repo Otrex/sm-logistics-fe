@@ -1,7 +1,7 @@
 import { mapStateOrActionToProps } from "@app/hoc";
 import { LayCenterWithLogo } from "@components/layouts/LayCenter";
-import ResetPasswordPanel from "@pages/rider/components/ResetPasswordPanel";
 import AuthAction from "@store/client/auth/actions";
+import View from "./view";
 import React from "react";
 import ResetPasswordController from "./controller";
 
@@ -10,7 +10,7 @@ function ResetPassword(props: {
 }) {
   return (
     <LayCenterWithLogo>
-      <ResetPasswordPanel {...props} />
+      <View {...props} />
     </LayCenterWithLogo>
   );
 }

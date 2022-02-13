@@ -54,7 +54,9 @@ function Tab({
 }: TabProps) {
   return (
     <div className={props.className}>
-      <TabHead className={`flex flex-row ${props.classNameHeader}`}>
+      <TabHead
+        className={`md:flex flex-row hidden ${props.classNameHeader}`}
+      >
         {children.map(
           (component: TabsComponentProps, idx: number) => (
             <TabHeadBtn

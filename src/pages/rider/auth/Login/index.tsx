@@ -2,7 +2,7 @@ import { mapStateOrActionToProps } from "@app/hoc";
 import Lay3070 from "@components/layouts/Lay3070";
 import AuthAction from "@store/client/auth/actions";
 import AuthSidePanel from "../../components/AuthSidePanel";
-import LoginPanel from "../../components/LoginPanel";
+import LoginPanel from "./view";
 import LoginLogic from "./controller";
 
 function Login(props: any) {

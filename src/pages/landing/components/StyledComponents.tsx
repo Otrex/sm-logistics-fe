@@ -60,6 +60,15 @@ export const P14 = styled.p`
   color: #4f4f4f;
 `;
 
+export const P14Bold = styled.p`
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.08em;
+`;
+
 export const H140 = styled.h1`
   font-family: Poppins;
   font-size: 40px;

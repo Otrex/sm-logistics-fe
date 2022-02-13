@@ -28,3 +28,7 @@ export type IWrapper = ThemedStyledProps<
   > & { width?: string },
   any
 >;
+
+interface History {
+  status: string;
+}

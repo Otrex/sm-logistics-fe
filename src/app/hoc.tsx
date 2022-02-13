@@ -33,6 +33,7 @@ export function mapStateOrActionToProps<
       );
       fullProps = { ...fullProps, ...mappedActions };
     }
+
     if (states) {
       const mappedState = mapStateToProps<S>(states, useAppSelector);
       fullProps = { ...fullProps, ...mappedState };

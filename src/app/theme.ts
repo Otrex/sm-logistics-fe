@@ -1,7 +1,11 @@
 import decorator from "@assets/img/decorator.svg";
+import userIcon from "@assets/img/userIcon.png";
 import decoratorWhite from "@assets/img/decoratorWhite.png";
 
 const theme = {
+  defaults: {
+    userThumbnail: userIcon,
+  },
   pattern: decorator,
   patternWhite: decoratorWhite,
   text_color: {

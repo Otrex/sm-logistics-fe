@@ -89,11 +89,13 @@ export const Button = styled.button<IButtonProps>`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
-  width: ${(props) => props.width || "100%"};
+  ${(props) =>
+    !props.nowidth ? `width: ${props.width || "100%"};` : undefined}
+
   height: ${(props) => props.height || "5.6rem"};
   color: ${(props) =>
     props.textColor || props.theme.text_color.default};
@@ -123,5 +125,16 @@ export const SearchInput = styled.input.attrs({})`
   padding-left: 6.5rem;
   ::placeholder {
     color: grey;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  border-color: rgba(189, 189, 189, 1);
+  border: 0.5px solid #bdbdbd;
+  border-radius: 4px;
+  min-height: 13.4rem;
+  padding: 1.5rem;
+  ::placeholder {
+    color: #101010;
   }
 `;

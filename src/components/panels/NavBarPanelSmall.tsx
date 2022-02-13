@@ -1,11 +1,8 @@
 import { WrapperWhite } from "@components/layouts/SideWapper";
-import logo from "@assets/img/logo-white.png";
 import { NavLink } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
-import UserShortDetails, {
-  UserShortType,
-} from "@components/utility/UserShortDetails";
+import UserShortDetails from "./UserShortDetails";
 
 type Props = {
   routes: {
@@ -22,7 +19,11 @@ type Props = {
   logout?: () => void;
   show?: boolean;
   toggle?: () => void;
-  userDetails: UserShortType;
+  userDetails?: {
+    name: string;
+    userThumbnail: string;
+    showMoreInfo: string;
+  };
 };
 
 const Nav = styled.div`
@@ -76,10 +77,11 @@ export default function NavBarPanelSmall(props: Props) {
       <NavClose onClick={toggle}></NavClose>
       <div className="w-80p">
         <WrapperWhite padding="2.4rem" bgSize="100%">
-          <div className="text-center my-24">
+          <div className="mt-24 mb-12">
             <UserShortDetails {...userDetails} />
           </div>
-          <Nav className="flex flex-col justify-between">
+          <hr />
+          <Nav className="flex flex-col justify-between mt-12">
             <div className="">
               <ul className=" overflow-hidden nav-side">
                 {routes.map((route, idx: number) => (

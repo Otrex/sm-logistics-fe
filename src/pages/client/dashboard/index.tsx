@@ -1,41 +1,40 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { urlPath } from "@app/utils";
-import routes, { settingsRoutes } from "./routes";
+import routes, { settingsRoutes, otherRoutes } from "./routes";
 import NavBarPanel from "@components/panels/NavBarPanel";
-import ExpressPickUp from "./expressPickUp";
+import HeaderPanel from "../components/HeaderPanel";
 
 const url = urlPath("/client/dashboard");
 
 const Dashboard = () => {
   return (
     <>
-      {!true ? <Redirect to="/client" /> : <></>}
       <div className="flex flex-row h-screen overflow-hidden">
         <NavBarPanel
           routes={routes}
           settingsRoutes={settingsRoutes}
           url={url}
         />
-        <div className="px-8 md:px-28 w-full overflow-y-scroll py-14">
-          <Switch>
-            {routes.map((route, idx) => (
-              <Route exact key={idx} path={url(route.path)}>
-                <div className="">{route.component}</div>
-              </Route>
-            ))}
+        <div className="w-full overflow-y-scroll pb-14">
+          <HeaderPanel
+            showBackBtn={window.location.pathname !== url("/home")}
+          />
+          <div className="px-11 md:px-28 md:mt-16 mt-12">
+            <Switch>
+              {routes.map((route, idx) => (
+                <Route exact key={idx} path={url(route.path)}>
+                  <div>{route.component}</div>
+                </Route>
+              ))}
 
-            <Route exact path={url("/express-pickup")}>
-              <ExpressPickUp />
-            </Route>
-
-            <Route exact path={url("/dashboard/logout")}>
-              <></>
-            </Route>
-            <Route exact path={url("/dashboard/view-details/:id")}>
-              hello
-            </Route>
-          </Switch>
+              {otherRoutes.map((route, idx) => (
+                <Route exact key={idx} path={url(route.path)}>
+                  <div>{route.component}</div>
+                </Route>
+              ))}
+            </Switch>
+          </div>
         </div>
       </div>
     </>

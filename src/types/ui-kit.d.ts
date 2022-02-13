@@ -41,6 +41,7 @@ export interface IButtonProps
   bgColor?: string;
   width?: string;
   height?: string;
+  nowidth?: boolean;
   borderRadius?: string;
 }
 

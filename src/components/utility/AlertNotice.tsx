@@ -23,10 +23,16 @@ const Indicator = styled.span`
   color: #fff;
 `;
 
-const AlertNotice = ({ amount }: { amount: number }) => {
+const AlertNotice = ({
+  amount,
+  onClick,
+}: {
+  amount: number;
+  onClick?: (e: any) => void;
+}) => {
   return (
     <>
-      <Wrapper>
+      <Wrapper onClick={onClick}>
         {amount ? <Indicator>{amount}</Indicator> : <></>}
         <IconRounded>
           <Alarm />

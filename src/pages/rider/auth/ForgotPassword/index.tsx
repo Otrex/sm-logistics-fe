@@ -1,6 +1,6 @@
 import { mapStateOrActionToProps } from "@app/hoc";
 import { LayCenterWithLogo } from "@components/layouts/LayCenter";
-import ForgotPasswordPanel from "@pages/rider/components/ForgotPasswordPanel";
+import ForgotPasswordPanel from "@pages/rider/auth/ForgotPassword/ForgotPasswordPanel";
 import AuthAction from "@store/client/auth/actions";
 import React from "react";
 import ForgotPasswordController from "./controller";

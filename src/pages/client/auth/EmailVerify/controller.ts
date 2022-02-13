@@ -9,10 +9,7 @@ export default class EmailVerifyController extends StateManager<any> {
   setform!: FormSetterType;
 
   setup() {
-    [this.form, this.setform] = this.formState({
-      otp: "",
-    });
-
+    [this.form, this.setform] = this.formState({ otp: "" });
     return this;
   }
 

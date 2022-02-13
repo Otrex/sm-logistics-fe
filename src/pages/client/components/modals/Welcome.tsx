@@ -1,5 +1,5 @@
 import { Wrapper } from "@components/layouts/SideWapper";
-import DashboardHomeController from "@pages/client/dashboard/home/controller";
+import DashboardHomeController from "@pages/client/dashboard/Home/controller";
 import { PropState } from "types/app.t";
 import { AccentButton, Button } from "@ui-kit/ComponentTags";
 import { ModalContent } from "@ui-kit/Modal";

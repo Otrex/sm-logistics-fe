@@ -92,6 +92,9 @@
   &-E5E5E5 {
     color: #E5E5E5;
   }
+  &-white {
+    color: white;
+  }
 }
 .shadow-panel {
   box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.05),
@@ -210,5 +213,15 @@
 
   &.underline {
     text-decoration: underline;
+  }
+}
+
+.border-right-grey-1 {
+  border-right: 1px solid #BDBDBD;
+}
+
+.rounded {
+  &24 {
+    border-radius: 2.4rem;
   }
 }

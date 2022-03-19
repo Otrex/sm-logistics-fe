@@ -7,6 +7,12 @@ type IsReadyType = {
   third: boolean;
 };
 
+type ModalTypes = {
+  payment: boolean;
+  confirm: boolean;
+  riderInfo: boolean;
+};
+
 type FormType = {
   items: {
     category: string;
@@ -24,12 +30,12 @@ type FormType = {
 };
 
 export default class DashboardExpressPickUpController extends StateManager<any> {
-  setShowModal!: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal!: (v: Partial<ModalTypes>) => void;
   setCurrentTab!: React.Dispatch<React.SetStateAction<number>>;
   isReadySetter!: (v: Partial<IsReadyType>) => void;
   formSetter!: (v: Partial<FormType>) => void;
   categoryOptions!: any[];
-  showModal!: boolean;
+  showModal!: ModalTypes;
   currentTab!: number;
   isReady!: IsReadyType;
   form!: FormType;
@@ -58,6 +64,11 @@ export default class DashboardExpressPickUpController extends StateManager<any> 
       first: false,
       second: false,
       third: false,
+    });
+    [this.showModal, this.setShowModal] = this.formState({
+      payment: false,
+      confirm: false,
+      riderInfo: false,
     });
     this.categoryOptions = ["Furniture"];
     return this;
@@ -164,7 +175,20 @@ export default class DashboardExpressPickUpController extends StateManager<any> 
     }
   };
 
+  togglePaymentModal = () => {
+    this.setShowModal({ payment: !this.showModal.payment });
+  };
+
+  toggleConfirmModal = () => {
+    this.setShowModal({ confirm: !this.showModal.confirm });
+  };
+
+  toggleRiderInfoModal = () => {
+    this.setShowModal({ riderInfo: !this.showModal.riderInfo });
+  };
+
   submitForm = () => {
     //
+    this.setShowModal({ payment: false, confirm: true });
   };
 }

@@ -63,7 +63,6 @@ const AddDestination = (state: DashboardExpressPickUpController) => (
           className="hidden md:inline-block"
           width={"auto"}
           onClick={state.previous}
-          // disabled={!state.isReady}
         >
           {" "}
           Previous{" "}

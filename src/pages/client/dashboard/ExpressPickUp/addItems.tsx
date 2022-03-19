@@ -60,10 +60,8 @@ const AddItem = (state: DashboardExpressPickUpController) => {
           className="hidden md:inline-block"
           width={"auto"}
           onClick={state.cancel}
-          // disabled={!state.isReady}
         >
-          {" "}
-          Cancel{" "}
+          Cancel
         </Button>
         <AccentButton
           className="md:w-auto w-full"
@@ -71,8 +69,7 @@ const AddItem = (state: DashboardExpressPickUpController) => {
           disabled={!state.isReady.first}
           nowidth
         >
-          {" "}
-          Continue{" "}
+          Continue
         </AccentButton>
       </div>
     </div>

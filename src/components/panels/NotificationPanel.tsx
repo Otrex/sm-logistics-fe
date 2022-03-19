@@ -17,7 +17,11 @@ export default function NotificationPanel(props: any) {
         }`}
       >
         <div className="w-full h-screen px-11 pt-9">
-          <NavLabel action={props.toggleShow} label="Notifications" styleType/>
+          <NavLabel
+            action={props.toggleShow}
+            label="Notifications"
+            styleType
+          />
 
           <div className="mt-14 left-0 w-full">
             <ul>

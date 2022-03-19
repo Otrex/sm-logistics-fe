@@ -73,6 +73,15 @@ export const P2 = styled.p`
   letter-spacing: 0.04em;
 `;
 
+export const P2Lite = styled.p`
+  font-family: Poppins;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+`;
+
 export const A = styled.a<IAProps | any>`
   ${(props) => (props.underline ? "text-decoration: underline;" : "")}
   ${(props) =>
